@@ -9,6 +9,8 @@ from numba import jit, prange
 
 from tardis.plasma.properties.base import ProcessingPlasmaProperty
 from tardis.plasma.properties.util import macro_atom
+from tardis.plasma.properties.util import macro_atom_with_numba
+
 
 logger = logging.getLogger(__name__)
 
@@ -201,7 +203,7 @@ class TransitionProbabilities(ProcessingPlasmaProperty):
         transition_type = macro_atom_data.transition_type.values
         lines_idx = macro_atom_data.lines_idx.values
         tpos = macro_atom_data.transition_probability.values
-        macro_atom.calculate_transition_probabilities(
+        transition_probabilities = macro_atom_numba.calculate_transition_probabilities(
                 tpos,
                 beta_sobolev.values,
                 j_blues.values,
