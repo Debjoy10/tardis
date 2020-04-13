@@ -16,7 +16,7 @@ simple TARDIS calculations.
 
 .. warning::
 
-    TARDIS is only compatbile with Python >3.6
+    TARDIS is only compatible with Python >3.6
 
 .. note::
     We strongly recommend to install TARDIS within an Anaconda environment and
